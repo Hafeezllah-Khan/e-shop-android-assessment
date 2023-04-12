@@ -2,37 +2,145 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+
+    android:background="#ECF6F6"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true">
 
-    <com.google.android.material.appbar.MaterialToolbar
+    <!--<com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/collapsingToolBarLayout"
         android:layout_width="match_parent"
-        android:scaleY="0.8"
-        android:scaleX="0.8"
+
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="2dp"
         android:animateLayoutChanges="true"
         app:contentInsetStart="0dp"
         app:contentInsetStartWithNavigation="0dp"
-        app:logoScaleType="centerCrop"
         app:titleCentered="false">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/menu"
+            android:layout_marginStart="5dp"
+            />
 
         <SearchView
             android:id="@+id/searchBarProduct"
             android:layout_width="match_parent"
+            android:layout_marginStart="67dp"
+            android:layout_marginEnd="5dp"
             android:layout_height="?attr/actionBarSize"
             android:background="@drawable/selector_search_view"
             android:iconifiedByDefault="false"
             android:queryHint="@string/search_for_product"
             android:searchHintIcon="@drawable/ic_category" />
+
+    </com.google.android.material.appbar.MaterialToolbar>-->
+
+    <!--<com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/collapsingToolBarLayout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="35dp"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:animateLayoutChanges="true"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:titleCentered="false">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/menu"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <SearchView
+            android:id="@+id/searchBarProduct"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginStart="67dp"
+            android:layout_marginEnd="23dp"
+            android:background="@drawable/selector_search_view"
+            android:iconifiedByDefault="false"
+            android:queryHint="@string/search_for_product"
+            android:searchHintIcon="@drawable/ic_category" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="find your suitable watch now."
+            android:textSize="36sp"
+            android:textColor="@color/black"/>
+
+    </com.google.android.material.appbar.MaterialToolbar>-->
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/collapsingToolBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp"
+        app:titleCentered="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="35dp"
+            android:paddingStart="23dp"
+            android:paddingEnd="23dp">
+
+            <!-- ImageView, SearchView, and TextView code here -->
+
+            <ImageView
+                android:id="@+id/menuIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/menu"
+                app:layout_constraintBottom_toBottomOf="@+id/searchBarProduct"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <SearchView
+                android:id="@+id/searchBarProduct"
+                android:layout_width="0dp"
+                android:layout_height="51dp"
+                android:layout_marginStart="67dp"
+                android:layout_marginEnd="0dp"
+                android:background="@drawable/selector_search_view"
+                android:iconifiedByDefault="false"
+                android:queryHint="@string/search_for_product"
+                android:searchHintIcon="@drawable/ic_category"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/menuIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/sloganText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="find your suitable watch now."
+                android:layout_marginTop="36dp"
+                android:textSize="36sp"
+                android:fontFamily="@font/outfit_medium"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchBarProduct"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </com.google.android.material.appbar.MaterialToolbar>
+
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

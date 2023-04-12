@@ -38,7 +38,7 @@ class HomeViewModel : ViewModel() {
             Toast.makeText(context,"Products From SQLite",Toast.LENGTH_LONG).show()
         }else{
             getDataFromAPI(context)
-            Toast.makeText(context,"Products From API",Toast.LENGTH_LONG).show()
+//            Toast.makeText(context,"Products From API",Toast.LENGTH_LONG).show()
         }
     }
 

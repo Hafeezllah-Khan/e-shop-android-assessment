@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-    
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardView"
@@ -19,101 +17,270 @@
         android:layout_height="wrap_content">
 
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewAllImages"
             android:layout_width="match_parent"
             android:layout_height="340dp"
-            android:orientation="horizontal"
-            android:padding="6dp" />
+            android:orientation="horizontal" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/backButton"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"
-            app:backgroundTint="@color/dark_orange"
-            android:background="@drawable/ripple"
-            android:insetLeft="0dp"
-            android:insetTop="0dp"
-            android:padding="0dp"
-            android:insetRight="0dp"
-            android:insetBottom="0dp"
-            app:icon="@drawable/ic_back"
-            app:iconGravity="textStart"
-            app:iconPadding="0dp"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true" />
 
-        <CheckBox
-            android:id="@+id/checkBoxFavorite"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/recyclerViewAllImages"
+            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="1dp"
-            android:background="@drawable/shape_ring"
-            android:button="@drawable/selector_favorites"
-            android:scaleX="0.9"
-            android:scaleY="0.9"
-            app:useMaterialThemeColors="false" />
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/backButton"
+                android:layout_marginTop="33dp"
+                android:layout_marginStart="23dp"
+                android:background="@drawable/shape_ring"
+                android:insetLeft="0dp"
+                app:useMaterialThemeColors="false"
+                android:insetTop="0dp"
+                android:padding="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/ic_back"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                android:layout_width="38dp"
+                android:layout_height="38dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="23dp">
+
+                <CheckBox
+                    android:id="@+id/checkBoxFavorite"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:background="@drawable/shape_ring"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:button="@drawable/selector_favorites"
+                    android:insetLeft="0dp"
+
+                    app:useMaterialThemeColors="false"
+                    android:insetTop="0dp"
+                    android:padding="12dp"
+                    android:insetRight="0dp"
+                    android:insetBottom="0dp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+
 
         <CheckBox
             android:id="@+id/checkBoxCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/checkBoxFavorite"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="1dp"
             android:layout_marginEnd="1dp"
+            android:visibility="gone"
             android:background="@drawable/shape_ring"
             android:button="@drawable/selector_cart"
             android:scaleX="1"
             android:scaleY="1"
             app:useMaterialThemeColors="false" />
 
-        <TextView
-            android:id="@+id/textViewProductName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/recyclerViewAllImages"
-            android:layout_marginTop="6dp"
-            android:fontFamily="sans-serif"
-            android:lines="2"
+            android:layout_marginTop="32dp"
+            android:id="@+id/name_and_price_lay"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewProductName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="23dp"
+                android:fontFamily="@font/outfit_medium"
+                android:maxLines="2"
+                android:paddingStart="1dp"
+                android:text="Apple watch series 7"
+                android:paddingEnd="1dp"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textViewProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="23dp"
+                android:fontFamily="@font/outfit_medium"
+                android:text="$1200"
+                android:textColor="#5534A5"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/name_and_price_lay"
+            android:fontFamily="@font/outfit_medium"
+            android:paddingStart="1dp"
+            android:text="(with solo app)"
+            android:paddingEnd="1dp"
+            android:textColor="#695D5D"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="21dp"
+            android:layout_below="@id/desc"
+            android:fontFamily="@font/outfit_medium"
             android:maxLines="2"
             android:paddingStart="1dp"
+            android:text="colors"
             android:paddingEnd="1dp"
-            android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/color_btn_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_below="@id/textViewColor"
+            android:layout_marginTop="25dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonColor1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="55dp"
+                android:layout_margin="4dp"
+                android:paddingVertical="20dp"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ellipse_orange"
+                app:iconTint="#DA7777"
+                app:iconGravity="textStart"
+                android:textAllCaps="false"
+                app:iconPadding="8dp"
+                android:fontFamily="@font/outfit_medium"
+                android:text="chalk pink"
+                app:strokeWidth="1dp"
+                android:textSize="12sp"
+                android:textColor="#BAAAAA"
+                android:backgroundTint="@color/white"
+                app:strokeColor="#CCBCBC" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonColor2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="55dp"
+                android:layout_margin="4dp"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ellipse_orange"
+                app:iconTint="#EB55C1"
+                android:paddingVertical="20dp"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/outfit_medium"
+                android:text="light pink"
+                app:strokeWidth="1dp"
+                android:textSize="12sp"
+                android:textColor="#BAAAAA"
+                android:backgroundTint="@color/white"
+                app:strokeColor="#CCBCBC" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonColor3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:minHeight="55dp"
+                android:paddingVertical="20dp"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ellipse_orange"
+                app:iconTint="#676060"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                android:fontFamily="@font/outfit_medium"
+                android:text="dark order"
+                app:strokeWidth="1dp"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                android:textColor="#BAAAAA"
+                android:backgroundTint="@color/white"
+                app:strokeColor="#CCBCBC" />
+
+        </LinearLayout>
+
+
 
         <!-- Text VIew to display Course Rating -->
         <!-- Image used in present in drawable folder -->
         <TextView
             android:id="@+id/textDescription"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewProductName"
-            android:paddingStart="1dp"
-            android:paddingEnd="1dp"
-            android:text="@string/description"
-            android:textStyle="bold" />
+            android:layout_below="@id/color_btn_lay"
+            android:paddingStart="23dp"
+            android:layout_marginTop="42dp"
+            android:textColor="#827E7E"
+            android:paddingEnd="23dp"
+            android:text="Detail"
+            android:textSize="15sp"
+            android:fontFamily="@font/outfit_medium"
+            />
+
+        <TextView
+            android:id="@+id/textReveiw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/color_btn_lay"
+            android:layout_toEndOf="@id/textDescription"
+            android:paddingStart="23dp"
+            android:layout_marginTop="42dp"
+            android:textColor="#827E7E"
+            android:paddingEnd="23dp"
+            android:text="Revews"
+            android:textSize="15sp"
+            android:fontFamily="@font/outfit_medium"
+            />
 
         <TextView
             android:id="@+id/textViewProductDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textDescription"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="36dp"
             android:layout_marginBottom="6dp"
             android:drawablePadding="2dp"
-            android:fontFamily="sans-serif"
-            android:paddingStart="1dp"
-            android:paddingEnd="1dp"
-            android:textSize="12sp" />
+            android:fontFamily="@font/outfit_regular"
+            android:paddingStart="23dp"
+            android:textColor="#AAA0A0"
+            android:text="What is a case study? A case study is a research approach that is used to generate an in-depth, multi-faceted understanding of a complex issue in its real-life context. It is an established research design that is used extensively in a wide variety of disciplines,"
+            android:paddingEnd="23dp"
+            android:textSize="15sp" />
 
 
         <RatingBar
@@ -126,6 +293,7 @@
             android:clickable="false"
             android:contextClickable="false"
             android:insetTop="0dp"
+            android:visibility="gone"
             android:insetBottom="0dp"
             android:isIndicator="true"
             android:progressTint="@color/orange"
@@ -141,51 +309,35 @@
             android:id="@+id/textViewProductFeatures"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:layout_below="@id/ratingBar"
-
             android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
             android:drawablePadding="2dp"
             android:fontFamily="sans-serif"
+            android:visibility="gone"
             android:paddingStart="1dp"
             android:paddingEnd="1dp"
             android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/textViewProductPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewProductFeatures"
-            android:layout_marginTop="6dp"
 
-            android:layout_marginBottom="6dp"
-            android:drawablePadding="2dp"
-            android:fontFamily="sans-serif"
-            android:paddingStart="1dp"
-            android:paddingEnd="1dp"
-            android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textSize="14sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonAddToShopping"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textViewProductPrice"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginStart="23dp"
+            android:layout_marginEnd="23dp"
+            android:layout_below="@id/textViewProductFeatures"
             android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
             android:layout_gravity="center"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/ripple"
-            android:backgroundTint="@color/dark_orange"
-            android:fontFamily="sans-serif"
-            android:paddingLeft="30dp"
-            android:paddingTop="-55dp"
-            android:paddingRight="30dp"
-            android:paddingBottom="-30dp"
+            android:backgroundTint="#004EDA"
+            android:fontFamily="@font/outfit_medium"
             android:text="@string/add_to_chart"
             android:textAllCaps="false"
+            android:textSize="24sp"
             android:textColor="@color/white" />
     </RelativeLayout>
 </ScrollView>

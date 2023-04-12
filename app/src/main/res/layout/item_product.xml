@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF6F6">
 
-<layout>
-
-    <data>
-
-        <variable
-            name="product"
-            type="com.ahmetozaydin.ecommerceapp.model.Product" />
-
-        <variable
-            name="adapter"
-            type="com.ahmetozaydin.ecommerceapp.adapter.ProductsAdapter" />
-
-    </data>
-
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +13,10 @@
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="21dp"
         app:cardElevation="3dp"
-        app:cardPreventCornerOverlap="true">
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -52,9 +45,9 @@
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="7dp"
                 android:contentDescription="@string/app_name"
-                android:maxHeight="110dp"
-                android:minWidth="148dp"
-                android:minHeight="110dp"
+                android:maxHeight="200dp"
+                android:minWidth="150dp"
+                android:minHeight="150dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_watch"
                 app:shapeAppearanceOverlay="@style/roundedImageView" />
@@ -82,11 +75,11 @@
                 android:layout_below="@id/imageOfProduct"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="9dp"
-                android:fontFamily="@font/outfit_medium"
+                android:fontFamily="sans-serif"
                 android:maxLines="2"
-                android:text="@{String.valueOf(product.title)}"
+                android:text="Galaxy watch"
                 android:textColor="#0F1010"
-                android:textSize="14sp"  />
+                android:textSize="14sp" />
 
             <!-- Text VIew to display Course Rating -->
             <!-- Image used in present in drawable folder -->
@@ -97,10 +90,11 @@
                 android:layout_below="@id/textViewProductName"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="11dp"
-                android:fontFamily="@font/outfit_medium"
-                android:text="@{`$`+String.valueOf(product.price)}"
+                android:fontFamily="sans-serif"
+                android:text="series 2"
                 android:textColor="#7A7474"
-                android:textSize="15sp"  />
+                android:textSize="15sp" />
+
 
             <TextView
                 android:id="@+id/textViewProductPrice"
@@ -109,8 +103,8 @@
                 android:layout_below="@id/textViewProductDesc"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="19dp"
-                android:layout_marginBottom="12dp"
-                android:fontFamily="@font/outfit_medium"
+                android:layout_marginBottom="9dp"
+                android:fontFamily="sans-serif"
                 android:text="\$124"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -133,10 +127,12 @@
                 android:paddingRight="30dp"
                 android:scaleX="0.8"
                 android:scaleY="0.8"
-                android:visibility="gone"
                 android:text="@string/add_to_chart"
                 android:textAllCaps="false"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:visibility="gone" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-</layout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
